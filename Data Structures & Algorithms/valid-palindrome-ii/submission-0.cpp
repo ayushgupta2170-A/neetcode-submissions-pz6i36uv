@@ -1,0 +1,29 @@
+class Solution {
+public:
+
+//base case
+bool isPal(string s,int l,int r){
+    while(l<r){
+    if(s[l]!=s[r]){
+        return false;
+
+    }
+    l++;
+    r--;
+  }
+  return true; 
+}
+
+   bool validPalindrome(string s) {
+    int l=0,r=s.length()-1;
+    while(l<r){
+    if(s[l]!=s[r]){
+        return isPal(s,l+1,r)||isPal(s,l,r-1);//iss line achi hai
+    }
+    l++;
+    r--;
+  }
+  return true;
+
+ }
+};
